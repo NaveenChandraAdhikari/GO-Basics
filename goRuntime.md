@@ -122,7 +122,17 @@ You write Java code, compile it into bytecode (`.jar` or `.class` files), and th
   * **Pro**: Can achieve incredible long-running performance by making optimizations based on how the code is actually being used. Enables platform independence.  
   * **Con**: Slower startup times (the "warm-up" period) and higher memory usage because the JVM itself is a complex process.
 
+
+
+
+
 Go is extremely effective at this. The Go compiler and linker work together to perform aggressive dead code elimination. When you run go build, the linker analyzes your entire program, starting from the main function. It identifies exactly which functions and variables are reachable (i.e., actually used).
+
+"Tree shaking" is a term from JavaScript (especially bundlers like Webpack), where:
+
+Unused code (like functions, imports, exports) is removed from the final bundle.
+
+It’s done at build time, mostly for front-end optimization (smaller JS files).
 
 | Language / Ecosystem      | Concept Name           | How it Works |
 |---------------------------|------------------------|--------------|
